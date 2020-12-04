@@ -2,25 +2,36 @@
 //use stack to call the remove characters function?
 
 class Stack {
-    #stack;
+    stack;
 
     constructor() {
-        this.#stack = [];
+        this.stack = [];
     }
 
     //put item ontop of stack
     push(item) {
-        this.#stack.push(item)
+        this.stack.push(item);
     }
 
     //remove item from top of stack and return item
-    pop(item) {
-
+    pop() {
+        return this.stack.pop();
     }
 
     //look at the item at the top of stack and return item
     peek() {
-
+        return this.stack[this.stack.length - 1];
     }
-
 }
+
+module.exports = Stack;
+
+const myStack = new Stack();
+myStack.push("[");
+console.log(myStack);
+myStack.pop();
+console.log(myStack);
+myStack.push("[");
+myStack.push("{");
+console.log(myStack.peek());
+// console.log(myStack);
