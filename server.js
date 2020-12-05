@@ -8,7 +8,7 @@ app.use(express.json());
 
 //endpoint
 app.post('/api/v1/lint', (req, res) => {
-    const result = linter(req.body)
+    const result = linter(req.body.code)
     res.send(result);
 })
 
